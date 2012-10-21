@@ -48,7 +48,7 @@ sub _create_short_url {
   my $db = MongoShortener::Database::getHandle();
   my $code = undef;
   for (1..5) {
-    $code = int rand(2**40);
+    $code = 1 + int rand(2**40 - 1);
     try {
       $db->urls->insert({ code => $code, url => $url }, { safe => 1 });
     } catch {
