@@ -1,0 +1,19 @@
+% layout 'default';
+% title 'MongoShortener';
+<h2>MongoShortener</h2>
+%= form_for '/' => ( method => 'post' ) => begin
+  <%= input_tag 'url' %>
+  %= submit_button 'Shorten URL'
+% end
+
+% if(defined stash('short_url')) {
+<p>Short URL: <%= stash('short_url') %></p>
+% }
+
+% if(defined stash('invalid_url')) {
+<p class="color: red;">Invalid URL</p>
+% }
+
+% if(defined stash('internal_error')) {
+<p class="color: red;">Internal error, try again later</p>
+% }
