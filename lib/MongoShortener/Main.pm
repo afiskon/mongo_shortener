@@ -71,7 +71,7 @@ sub _resolve_short_url {
 
   my $db = MongoShortener::Database::getHandle();
   my $doc = $db->urls->find_one({ code => $code });
-  return defined $doc ? $doc->{url} : undef;;
+  return defined $doc ? $doc->{url} : undef;
 }
 
 sub _is_valid_url {
