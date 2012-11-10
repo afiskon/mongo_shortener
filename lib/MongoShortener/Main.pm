@@ -3,7 +3,7 @@ use Mojo::Base 'Mojolicious::Controller';
 use MongoShortener::Database;
 use MongoShortener::Const;
 use MIME::Base64 qw/encode_base64url decode_base64url/;
-use Regexp::Common qw /URI/;
+use Regexp::Common qw/URI/;
 use Try::Tiny;
 
 sub get_main {
